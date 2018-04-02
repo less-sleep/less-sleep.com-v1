@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     ${breakpoint('mobile')`
         flex-direction: row;
         height: 60px;
-        margin: 0;
+        margin: 0 0 10px;
         padding: 0 40px;
         width: 100%;
     `}

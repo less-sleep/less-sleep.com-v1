@@ -68,13 +68,13 @@ const IFrame = styled.iframe`
 class Code extends Component {
     state = {
         isOpen: false,
+        offsetY: undefined,
     };
 
     elDesc = undefined;
-    offsetY = undefined;
 
     onDrawerBounds = bounds => {
-        this.offsetY = bounds.height - 1;
+        this.setState(() => ({offsetY: bounds.height - 1}));
     };
 
     onOpen = () => {
@@ -82,14 +82,14 @@ class Code extends Component {
     };
 
     render() {
-        const {isOpen} = this.state;
+        const {isOpen, offsetY} = this.state;
         const {src, title, text} = this.props;
 
         const icon = isOpen ? <Icon type={'close'} size={'16px'} /> : <Icon type={'info'} size={'20px'} />;
 
         return (
             <Wrapper>
-                <Content className={isOpen ? 'is-open' : undefined} offsetY={this.offsetY}>
+                <Content className={isOpen ? 'is-open' : undefined} offsetY={offsetY}>
                     <IFrame src={src} />
                     <ToggleButton onClick={this.onOpen}>{icon}</ToggleButton>
                 </Content>

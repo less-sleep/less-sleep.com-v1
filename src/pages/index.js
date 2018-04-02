@@ -36,13 +36,30 @@ const Heading2 = styled.h2`
     font-size: 2.4rem;
     line-height: 3.2rem;
     margin: 0 0 20px;
+
+    ${breakpoint('mobile')`
+        font-size: 2.2rem;
+        line-height: 3rem;
+    `}
 `;
 
 const Heading3 = styled.h3`
     font-size: 0.95rem;
-    line-height: 2.2rem;
+    line-height: 1.6rem;
     margin: 0 0 20px;
     text-transform: uppercase;
+`;
+
+const SubHeading = styled.span`
+    color: rgba(0, 0, 0, 0.5);
+
+    ${breakpoint('tablet')`
+        display: inline;
+    `}
+
+    ${breakpoint('mobile')`
+        display: block;
+    `}
 `;
 
 const Paragraph = styled.p`
@@ -55,13 +72,7 @@ const Paragraph = styled.p`
 `;
 
 const Section = styled.div`
-    ${breakpoint('tablet')`
-        margin: 0 0 40px;
-    `}
-
-    ${breakpoint('mobile')`
-        margin: 0 0 20px;
-    `}
+    margin: 0 0 40px;
 `;
 
 const StyledLink = styled(Link)`
@@ -110,12 +121,15 @@ const IndexPage = props => {
             <Header title={data.site.siteMetadata.title} />
             <Content>
                 <Section>
-                    <Heading3>Chris Arnold / Developer and designer</Heading3>
+                    <Heading3>Chris Arnold / <SubHeading>Developer and designer</SubHeading></Heading3>
                     <Heading2>Purveyor of Fine Digital Goods</Heading2>
-                    <Paragraph>I'm Chris Arnold, a designer and developer from Christchurch, New Zealand. I like to write clean code and partner it with clean, beautiful design and user-friendly and well thought out interfaces. I work mainly in Javascript, HTML and CSS and enjoy exploring new frameworks, tools and, mostly, new  paradigms in code, design and UX.</Paragraph>
+                    <Paragraph>I'm Chris Arnold, a designer and developer from Christchurch, New Zealand. I like to write clean, elegant code and partner it with clean, beautiful design and well thought out, user-friendly interfaces. I work mainly in Javascript, HTML and CSS and enjoy exploring new frameworks, tools and, mostly, new  paradigms in code, design and UX.</Paragraph>
                 </Section>
                 <Section>
-                    <Heading3>Code / Experiments and Projects</Heading3>
+                    <Heading3>Code / <SubHeading>Experiments and Projects</SubHeading></Heading3>
+                    <StyledLink to="/code/vue-books/">
+                        Vue Books <SubLink>VueJS</SubLink>
+                    </StyledLink>
                     <StyledLink to="/code/travel-app/">
                         Travel App <SubLink>AngularJS, Spectre.css</SubLink>
                     </StyledLink>

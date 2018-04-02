@@ -27,13 +27,24 @@ class Drawer extends Component {
         this.elWrapper = el;
     };
 
-    componentDidMount() {
+    calculateBounds = () => {
+        console.log('calculateBounds')
         const {onBoundsCalculated} = this.props;
         
         if (onBoundsCalculated) {
             const descBounds = this.elWrapper.getBoundingClientRect();
             onBoundsCalculated(descBounds);
         }
+    };
+
+    componentDidMount() {
+        this.calculateBounds();
+
+        window.addEventListener('resize', this.calculateBounds);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.calculateBounds);
     }
 
     render() {
