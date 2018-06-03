@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
@@ -12,11 +12,9 @@ const Wrapper = styled.div`
 
     ${breakpoint('tablet')`
         flex-direction: row;
-    `}
-
-    ${breakpoint('mobile')`
+    `} ${breakpoint('mobile')`
         flex-direction: column;
-    `}
+    `};
 `;
 
 const Content = styled.div`
@@ -26,11 +24,9 @@ const Content = styled.div`
 
     ${breakpoint('tablet')`
         padding: 130px 60px;
-    `}
-
-    ${breakpoint('mobile')`
+    `} ${breakpoint('mobile')`
         padding: 0 40px;
-    `}
+    `};
 `;
 
 const Heading2 = styled.h2`
@@ -41,7 +37,7 @@ const Heading2 = styled.h2`
     ${breakpoint('mobile')`
         font-size: 2.2rem;
         line-height: 3rem;
-    `}
+    `};
 `;
 
 const Heading3 = styled.h3`
@@ -56,11 +52,9 @@ const SubHeading = styled.span`
 
     ${breakpoint('tablet')`
         display: inline;
-    `}
-
-    ${breakpoint('mobile')`
+    `} ${breakpoint('mobile')`
         display: block;
-    `}
+    `};
 `;
 
 const Paragraph = styled.p`
@@ -83,14 +77,12 @@ const StyledLink = styled(Link)`
     font-weight: 400;
     line-height: 1.8rem;
     text-decoration: none;
-    
+
     ${breakpoint('tablet')`
         margin: 0 0 30px;
-    `}
-
-    ${breakpoint('mobile')`
+    `} ${breakpoint('mobile')`
         margin: 0 0 20px;
-    `}
+    `};
 `;
 
 const SubLink = styled.span`
@@ -99,19 +91,17 @@ const SubLink = styled.span`
     font-weight: 400;
     text-decoration: none;
     text-transform: lowercase;
-    
+
     ${breakpoint('tablet')`
         &:before {
             color: rgba(0, 0, 0, 0.3);
             content: '/ ';
         }
         display: inline;
-    `}
-
-    ${breakpoint('mobile')`
+    `} ${breakpoint('mobile')`
         display: block;
         margin: 3px 0 0;
-    `}
+    `};
 `;
 
 const IndexPage = props => {
