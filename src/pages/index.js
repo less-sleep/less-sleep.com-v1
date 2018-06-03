@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
+import Helmet from 'react-helmet';
 
 import Header from '../components/Header';
 
@@ -118,15 +119,38 @@ const IndexPage = props => {
 
     return (
         <Wrapper>
+            <Helmet
+                meta={[
+                    {
+                        name: 'description',
+                        content:
+                            'Less Sleep. Website of Chris Arnold - Developer, Designer and Purveyor of Fine Digital Goods',
+                    },
+                    {
+                        name: 'keywords',
+                        content:
+                            'chris arnold, javascript, html, css, chris, arnold, web, web development, web developer, code, frameworks',
+                    },
+                ]}
+            />
             <Header title={data.site.siteMetadata.title} />
             <Content>
                 <Section>
-                    <Heading3>Chris Arnold / <SubHeading>Developer and designer</SubHeading></Heading3>
+                    <Heading3>
+                        Chris Arnold / <SubHeading>Developer and Designer</SubHeading>
+                    </Heading3>
                     <Heading2>Purveyor of Fine Digital Goods</Heading2>
-                    <Paragraph>I'm Chris Arnold, a designer and developer from Christchurch, New Zealand. I like to write clean, elegant code and partner it with clean, beautiful design and well thought out, user-friendly interfaces. I work mainly in Javascript, HTML and CSS and enjoy exploring new frameworks, tools and, mostly, new  paradigms in code, design and UX.</Paragraph>
+                    <Paragraph>
+                        I'm Chris Arnold, a designer and developer from Christchurch, New Zealand. I like to write
+                        clean, elegant code and partner it with clean, beautiful design and well thought out,
+                        user-friendly interfaces. I work mainly in Javascript, HTML and CSS and enjoy exploring new
+                        frameworks, tools and, most importantly, new paradigms in code, design and UX.
+                    </Paragraph>
                 </Section>
                 <Section>
-                    <Heading3>Code / <SubHeading>Experiments and Projects</SubHeading></Heading3>
+                    <Heading3>
+                        Code / <SubHeading>Experiments and Projects</SubHeading>
+                    </Heading3>
                     <StyledLink to="/code/vue-books/">
                         Vue Books <SubLink>VueJS</SubLink>
                     </StyledLink>
