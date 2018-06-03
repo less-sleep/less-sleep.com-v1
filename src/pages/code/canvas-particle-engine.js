@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import Link from 'gatsby-link';
 
 import Code from '../../components/Code';
