@@ -1,0 +1,15 @@
+{
+    "name": "less-sleep-server",
+    "description": "Server for Less Sleep",
+    "version": "1.0.0",
+    "author": "Chris Arnold <chris@less-sleep.com>",
+    "dependencies": {
+        "express": "^4.16.3"
+    },
+    "keywords": [],
+    "license": "MIT",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "devDependencies": {}
+}

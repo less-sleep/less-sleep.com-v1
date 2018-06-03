@@ -28,7 +28,6 @@ class Drawer extends Component {
     };
 
     calculateBounds = () => {
-        console.log('calculateBounds')
         const {onBoundsCalculated} = this.props;
         
         if (onBoundsCalculated) {
