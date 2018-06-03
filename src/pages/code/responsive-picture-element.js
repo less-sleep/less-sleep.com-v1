@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 import Code from '../../components/Code';
+import {Helmet} from 'react-helmet';
 
 const title = `HTML5 Responsive Picture Element`;
 const description = `
@@ -10,7 +11,21 @@ const description = `
 `;
 
 const ResponsivePictureElement = () => (
-    <Code src={'https://meltplastic.net/demos/responsive_images/index.html'} title={title} text={description} />
+    <div>
+        <Helmet
+            meta={[
+                {
+                    name: 'description',
+                    content: description,
+                },
+                {
+                    name: 'keywords',
+                    content: 'html, css, picture element',
+                },
+            ]}
+        />
+        <Code src={'https://meltplastic.net/demos/responsive_images/index.html'} title={title} text={description} />
+    </div>
 );
 
 export default ResponsivePictureElement;
